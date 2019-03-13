@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小小抽奖</title>
+	<style>
+	body{
+		height:900px;
+		background: url(img/1.jpg) no-repeat;
+		background-size:100% 100%
+	}
+		#inp1{
+			width:240px;
+			height:60px;
+			font-size:26px;
+			text-align:center;
+			border-radius:10px;
+			margin-top: 200px;
+		}
+		.butt{
+			width:120px;
+			height:50px;
+			font-size:18px;
+			text-align:center;
+			margin-top:20px;
+			border-radius:15px;
+			background-color:rgb(230,230,230);
+		}
+		audio{
+			margin-top:20px; 
+			width:40px;
+			height:20px;
+ 			background: white;
+			position: absolute;
+			top: 0;
+			left:0;
+ 		}
+		
+	</style>
+</head>
+<body>
+	<div style="width:600px;margin:30px auto;text-align:center;">
+		<input type="text" id="inp1" value='倒计时' ><br>
+		<button id="but1" class='butt'>点击开始</button><br>	
+		<button id="but2" class='butt'>点击停止</button>
+		<audio src="music/1.mp3" loop autoplay controls>
+			<source src="music/1.mp3" type="audio/mp3"></source>
+		</audio>
+	</div>	
+</body>
+<script>
+	var inp1= document.getElementById('inp1');
+	var names=['张铭洋','邢玉祥','王泽廷','邓科','刘磊','尹鹏飞','宋效闯','范猛猛','范洋洋','胡春芳','贺明军','董小青','杨喜梅','杨佳豪','李畅畅','雷雨晴','李书群','杨冰冰','侯江山','司鹏举','董亚伟','赵豪','刘瑞','赵志帅','冯豫城','刘港','王乾坤','王明凯','李耀宇','杨博文','余文杰','貟鹏辉','朱银鹏','苏志强','苗康嵩','祁祥轩'];
+
+	var randoms
+	but1.onclick=function(){
+			clearInterval(randoms)
+			randoms=setInterval(function(){
+				inp1.value = namess();
+			},10)
+		}
+	but2.onclick=function(){
+			clearInterval(randoms)
+			inp1.value=namess();
+	}
+
+		// 获取名字
+	function erry(min,max){
+		return Math.floor(Math.random()*(max-min+1)+min);
+		}
+		
+	function namess(){
+			var i = erry(0 ,names.length-1)
+			var name = names[i];
+				//保存
+			return name;
+		}
+
+	
+</script>
+</html>

@@ -1,0 +1,261 @@
+*{
+	margin: 0;
+	padding:0;
+	/*list-style-type: none;*/
+}
+body,html{
+	font-size: 17px;
+	background-color: rgb(242,242,242);
+}
+header{
+	width:100%;
+	background-color: rgba(60,60,60,0.9);
+	text-align: center;
+	box-shadow: 0 3px 4px 1px rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding:15px 0 2px;
+	z-index: 10;
+}
+header>img{
+	width:136px;
+	/*height:44px;*/
+}
+nav ul{
+	margin-top:10px;
+	list-style-type: none;
+	/*弹性布局*/
+	display: flex;
+	flex-direction:row;
+	flex-wrap:no-wrap;
+	justify-content:center;
+
+}
+/*导航条居中方式2*/
+/*nav ul{
+	width:50%;
+	margin: 0 auto;
+	margin-top:10px;
+	list-style-type: none;
+	display: flex;
+	flex-direction:row;
+	flex-wrap:no-wrap;
+	justify-content:space-around;
+
+}*/
+nav ul >li a{
+	text-decoration: none;
+	color:#898989;
+	font-size: 0.8rem;
+
+}
+nav ul>li{
+	/*margin-left: 10%;*/
+}
+nav ul>li:nth-child(n+2){
+	margin-left: 10%;
+}
+/*给a标签添加hover效果*/
+nav ul>li a:hover{
+	color:white;
+}
+
+/*网页的中间部分*/
+.center{
+	margin: 130px auto;
+	width: 95%;
+	margin-bottom:20px;
+	/*position: relative;*/
+}
+.scrollimg img{
+	width:100%;
+}
+.infor{
+	margin-top: 30px;
+}
+/*设置文字介绍部分*/
+.infor p{
+	text-indent: 2rem;
+	font-size: 1.1rem;
+	border-top: 2px solid #ddd;
+	border-bottom: 2px solid #ddd;
+	padding: 2% 0;
+	color:rgb(102,102,102) ;
+	line-height: 1.6rem;
+	font-family:STKaiti, "微软雅黑";
+}
+.company_logo{
+	text-align: center;
+	padding:2% 0;
+}
+.company_logo img{
+	width:50px;
+	margin: 0 0.5%;
+}
+.works{
+	width:100%;
+	/*设置弹性容器*/
+	display: flex;
+	/*设置弹性子元素是否允许换行*/
+	flex-wrap:wrap;
+	flex-direction:row;
+	justify-content:center;
+
+	/*在父级中不设置高度时,不需要设置换行后的风格*/
+	/*align-items:center;*/
+	/*align-content:space-around;*/
+}
+.works a{
+	width:30%;
+	text-decoration: none;
+	border-radius: 5%;
+	overflow: hidden;
+	margin-bottom: 25px;
+}
+.works a:nth-child(3n-1){
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.works a img{
+	width:100%;
+	vertical-align: top;
+}
+.works a>p{
+	background-color: white;
+	text-align: center;
+	padding: 8px;
+	color:rgb(180,180,180);
+	font-size: 1rem;
+}
+.picture{
+	width:100%;
+	position: relative;
+}
+/*hover部分的阴影*/
+.picture .bg{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+	text-align: center;
+	/*opacity: 0;*/
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color:white;
+
+}
+.works a:hover .bg{
+	display:flex;
+	/*设置主轴方向为纵向*/
+	flex-direction:column;
+	/*弹性子元素沿主轴方向居中*/
+	justify-content:center;
+}
+.bg h2{
+	color:white;
+	font-size: 2rem;
+}
+.bg p{
+	color:white;
+	font-size: 0.9rem;
+}
+footer{
+	background-color: rgb(224,224,224);
+	display: flex;
+	padding:20px 0;
+	/*justify-content:center;*/
+}
+footer .left{
+	width:50%;
+	text-align: right;
+	border-right: 1px solid gray;
+}
+footer .left a{
+	text-decoration: none;
+}
+footer .left a img{
+	width: 30px;
+	margin: 0px 5px;
+}
+footer .right{
+	width:50%;
+	padding-left: 25px;
+}
+footer .right img{
+	width:145px;
+	margin-bottom:10px;
+}
+footer .right p{
+	font-size: 0.6rem;
+	color:#888888;
+	line-height: 1.3rem;
+}
+
+/*媒体查询	<=460px*/
+@media screen and (max-width:460px) {
+	.center{
+		width:95%;
+	}
+	.works a{
+		width:45%;
+	}
+	.works a:nth-child(3n+2){
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.infor p{
+			font-size: 0.8rem;
+		}
+	/*设置奇数项的右边距*/
+	.works a:nth-child(odd){
+		margin-right: 10%;
+	}
+	
+	.company_logo img{
+		width:40px;
+		margin: 0 0.5%;
+	}
+	.bg h2{
+		color:white;
+		font-size: 1.2rem;
+
+	}
+	.bg p{
+		color:white;
+		font-size: 0.7rem;
+	}
+
+}
+/*460px--640px*/
+	@media screen and (min-width:460px) and (max-width: 640px){
+
+		.center{
+			width:95%;
+		}
+		
+		.company_logo img{
+			width:40px;
+		}
+		.bg h2{
+			color:white;
+			font-size: 1.2rem;
+		}
+		.bg p{
+			color:white;
+			font-size: 0.7rem;
+		}
+		.works a>p{
+			font-size: 0.7rem;
+		}
+	}
+	/*固定位置*/
+@media screen and (min-width:640px) and (max-width: 780px){
+	.center{width:640px;}
+}	
+@media screen and (min -width:1200px){
+	.center{
+		width:1200px;
+	}
+}

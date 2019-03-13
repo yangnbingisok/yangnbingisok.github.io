@@ -1,0 +1,653 @@
+			.body4{
+				width: 1250px;
+				height: 480px;
+				margin: 0 auto;
+				margin-top: 30px;
+			}
+			.body4Title{
+				height: 50px;
+				overflow: hidden;
+			}
+			.B4TL{
+				font-size: 1.4rem;
+				line-height: 50px;
+				float: left;
+				color:black;
+			}
+			.B4bottom{
+				width: 1250px;
+				height: 420px;
+				display: flex;
+				justify-content:space-between;
+				flex-wrap:nowrap;
+			}
+			.B4lunbo1{
+				width: 300px;
+				height: 420px;
+				display: flex;
+				flex-direction:column;
+				justify-content:flex-start;
+				align-items:center;
+				flex-wrap:nowrap;
+				position: relative;
+				background-color: white;
+				border-top: 1px solid orange;
+			}
+			.B4To1{
+				color: orange;
+				font-size: 1.2rem;
+				margin-top: 30px;
+			}
+			.B4lunboDiv1{
+				width: 300px;
+				height: 260px;
+				margin-top: 18px;
+				position: relative;
+				overflow: hidden;
+
+			}
+			.B4lunboDC1{
+				width: calc(300px*4);
+				height: 260px;
+				display: flex;
+				flex-direction:row;
+				justify-content:space-between;
+				flex-wrap:nowrap;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.B4lunboDC1 li{
+				width: 300px;
+				height: 260px;
+				display: flex;
+				flex-direction:column;
+				justify-content:space-between;
+				align-items:center;
+				text-align: center;
+				flex-wrap:nowrap;
+			}
+			.B4p1{
+				width: 150px;
+				height: 50px;
+				font-size: 1.1rem;
+				color:#222;
+			}
+			.B4p2{
+				width: 200px;
+				height: 50px;
+				font-size: 0.8rem;
+				color:#999;
+			}
+			.B4lunboDC1 li span{
+				height: 12px;
+				font-size: 1rem;
+			}
+			.B4lunboDC1 li div{
+				width: 120px;
+				height: 30px;
+				border: 1px solid orange;
+				font-size: 1rem;
+				line-height: 30px;
+				color:orange;
+				cursor: pointer;
+			}
+			.B4lunboDC1 li img{
+				width: 150px;
+				height: 130px;
+			}
+			.B4left1 {
+				width: 30px;
+				height: 60px;
+				color: white;
+				font-weight: bolder;
+				font-size: 30px;
+				text-align: center;
+				line-height: 55px;
+				background: rgb(233,233,233);
+				cursor: pointer;
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto 0;
+				display: none;
+				
+			}
+			.B4right1 {
+				width: 30px;
+				height: 60px;
+				color: white;
+				font-weight: bolder;
+				font-size: 30px;
+				text-align: center;
+				line-height: 55px;
+				background: rgb(233,233,233);
+				cursor: pointer;
+				position: absolute;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto 0;
+				display: none;
+
+			}	
+			.B4right1:hover{
+				background-color: #999;
+			}
+			.B4left1:hover{
+				background-color: #999;
+			}
+		.B4lunbo1Btns {
+			/*width: 100%;*/
+			height: 20px;
+			position: absolute;
+			opacity: 0.9;
+			display: flex;
+			border-radius: 10px;
+			/*主轴方向*/
+			justify-content: flex-start;
+			/*侧轴方向*/
+			align-items: center;
+			margin: 0 auto;
+			left: 50%;
+			bottom: 30px;
+			transform:translateX(-50%);
+		}
+
+		.B4lunbo1Btns li {
+			border: 1px solid #ccc;
+			margin: 0 5px;
+			cursor: pointer;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background-color: green;
+		}
+		.B4lunbo1Btns li:hover{
+			background: white;
+			border: 1px green solid;
+			box-shadow: 0 0 3px 2px #ccc;
+		}
+		/*按钮高亮类*/
+		li.lunboActive {
+			background: white;
+			border: 1px green solid;
+			box-shadow: 0 0 3px 2px #ccc;
+		}
+
+
+
+
+
+		
+			.B4lunbo2{
+				width: 300px;
+				height: 420px;
+				display: flex;
+				flex-direction:column;
+				justify-content:flex-start;
+				align-items:center;
+				flex-wrap:nowrap;
+				position: relative;
+				background-color: white;
+				border-top: 1px solid palegreen;
+				
+
+			}
+			.B4To2{
+				color: orange;
+				font-size: 1.2rem;
+				margin-top: 30px;
+			}
+			.B4lunboDiv2{
+				width: 300px;
+				height: 260px;
+				margin-top: 18px;
+				position: relative;
+				overflow: hidden;
+			}
+			.B4lunboDC2{
+				width: calc(300px*4);
+				height: 260px;
+				display: flex;
+				flex-direction:row;
+				justify-content:space-between;
+				flex-wrap:nowrap;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.B4lunboDC2 li{
+				width: 300px;
+				height: 260px;
+				display: flex;
+				flex-direction:column;
+				justify-content:space-between;
+				align-items:center;
+				text-align: center;
+				flex-wrap:nowrap;
+			}
+			.B4p1{
+				width: 150px;
+				height: 50px;
+				font-size: 1.1rem;
+				color:#222;
+			}
+			.B4p2{
+				width: 200px;
+				height: 50px;
+				font-size: 0.8rem;
+				color:#999;
+			}
+			.B4lunboDC2 li span{
+				height: 12px;
+				font-size: 1rem;
+			}
+			.B4lunboDC2 li div{
+				width: 120px;
+				height: 30px;
+				border: 1px solid orange;
+				font-size: 1rem;
+				line-height: 30px;
+				color:orange;
+				cursor: pointer;
+			}
+			.B4lunboDC2 li img{
+				width: 150px;
+				height: 130px;
+			}
+			.B4left2 {
+				width: 30px;
+				height: 60px;
+				color: white;
+				font-weight: bolder;
+				font-size: 30px;
+				text-align: center;
+				line-height: 55px;
+				background: rgb(233,233,233);
+				cursor: pointer;
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto 0;
+				display: none;
+
+			}
+			.B4right2 {
+				width: 30px;
+				height: 60px;
+				color: white;
+				font-weight: bolder;
+				font-size: 30px;
+				text-align: center;
+				line-height: 55px;
+				background: rgb(233,233,233);
+				cursor: pointer;
+				position: absolute;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto 0;
+				display: none;
+
+			}	
+			.B4right2:hover{
+				background-color: #999;
+			}
+			.B4left2:hover{
+				background-color: #999;
+			}
+		.B4lunbo2Btns {
+			/*width: 100%;*/
+			height: 20px;
+			position: absolute;
+			opacity: 0.9;
+			display: flex;
+			border-radius: 10px;
+			/*主轴方向*/
+			justify-content: flex-start;
+			/*侧轴方向*/
+			align-items: center;
+			margin: 0 auto;
+			left: 50%;
+			bottom: 30px;
+			transform:translateX(-50%);
+		}
+
+		.B4lunbo2Btns li {
+			border: 1px solid #ccc;
+			margin: 0 5px;
+			cursor: pointer;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background-color: green;
+		}
+		.B4lunbo2Btns li:hover{
+			background: white;
+			border: 1px green solid;
+			box-shadow: 0 0 3px 2px #ccc;
+		}
+		li.lunboActive2 {
+			background: white;
+			border: 1px green solid;
+			box-shadow: 0 0 3px 2px #ccc;
+		}
+
+
+
+
+
+		.B4lunbo3{
+				width: 300px;
+				height: 420px;
+				display: flex;
+				flex-direction:column;
+				justify-content:flex-start;
+				align-items:center;
+				flex-wrap:nowrap;
+				position: relative;
+				background-color: white;
+				border-top: 1px solid orange;
+
+			}
+			.B4To3{
+				color: orange;
+				font-size: 1.2rem;
+				margin-top: 30px;
+			}
+			.B4lunboDiv3{
+				width: 300px;
+				height: 260px;
+				margin-top: 18px;
+				position: relative;
+				overflow: hidden;
+			}
+			.B4lunboDC3{
+				width: calc(300px*4);
+				height: 260px;
+				display: flex;
+				flex-direction:row;
+				justify-content:space-between;
+				flex-wrap:nowrap;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.B4lunboDC3 li{
+				width: 300px;
+				height: 260px;
+				display: flex;
+				flex-direction:column;
+				justify-content:space-between;
+				align-items:center;
+				text-align: center;
+				flex-wrap:nowrap;
+			}
+			.B4p1{
+				width: 150px;
+				height: 50px;
+				font-size: 1.1rem;
+				color:#222;
+			}
+			.B4p2{
+				width: 200px;
+				height: 50px;
+				font-size: 0.8rem;
+				color:#999;
+			}
+			.B4lunboDC3 li span{
+				height: 12px;
+				font-size: 1rem;
+			}
+			.B4lunboDC3 li div{
+				width: 120px;
+				height: 30px;
+				border: 1px solid orange;
+				font-size: 1rem;
+				line-height: 30px;
+				color:orange;
+				cursor: pointer;
+			}
+			.B4lunboDC3 li img{
+				width: 150px;
+				height: 130px;
+			}
+			.B4left3 {
+				width: 30px;
+				height: 60px;
+				color: white;
+				font-weight: bolder;
+				font-size: 30px;
+				text-align: center;
+				line-height: 55px;
+				background: rgb(233,233,233);
+				cursor: pointer;
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto 0;
+				display: none;
+			}
+			.B4right3 {
+				width: 30px;
+				height: 60px;
+				color: white;
+				font-weight: bolder;
+				font-size: 30px;
+				text-align: center;
+				line-height: 55px;
+				background: rgb(233,233,233);
+				cursor: pointer;
+				position: absolute;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto 0;
+				display: none;
+
+			}	
+			.B4right3:hover{
+				background-color: #999;
+			}
+			.B4left3:hover{
+				background-color: #999;
+			}
+		.B4lunbo3Btns {
+			/*width: 100%;*/
+			height: 20px;
+			position: absolute;
+			opacity: 0.9;
+			display: flex;
+			border-radius: 10px;
+			/*主轴方向*/
+			justify-content: flex-start;
+			/*侧轴方向*/
+			align-items: center;
+			margin: 0 auto;
+			left: 50%;
+			bottom: 30px;
+			transform:translateX(-50%);
+		}
+
+		.B4lunbo3Btns li {
+			border: 1px solid #ccc;
+			margin: 0 5px;
+			cursor: pointer;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background-color: green;
+		}
+		.B4lunbo3Btns li:hover{
+			background: white;
+			border: 1px green solid;
+			box-shadow: 0 0 3px 2px #ccc;
+		}
+		li.lunboActive3 {
+			background: white;
+			border: 1px green solid;
+			box-shadow: 0 0 3px 2px #ccc;
+		}
+
+
+
+
+
+
+
+		.B4lunbo4{
+				width: 300px;
+				height: 420px;
+				display: flex;
+				flex-direction:column;
+				justify-content:flex-start;
+				align-items:center;
+				flex-wrap:nowrap;
+				position: relative;
+				border-top: 1px solid green;
+				background-color: white;
+			}
+			.B4To4{
+				color: orange;
+				font-size: 1.2rem;
+				margin-top: 30px;
+			}
+			.B4lunboDiv4{
+				width: 300px;
+				height: 260px;
+				margin-top: 18px;
+				position: relative;
+				overflow: hidden;
+			}
+			.B4lunboDC4{
+				width: calc(300px*4);
+				height: 260px;
+				display: flex;
+				flex-direction:row;
+				justify-content:space-between;
+				flex-wrap:nowrap;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.B4lunboDC4 li{
+				width: 300px;
+				height: 260px;
+				display: flex;
+				flex-direction:column;
+				justify-content:space-between;
+				align-items:center;
+				text-align: center;
+				flex-wrap:nowrap;
+			}
+			.B4p1{
+				width: 150px;
+				height: 50px;
+				font-size: 1.1rem;
+				color:#222;
+			}
+			.B4p2{
+				width: 200px;
+				height: 50px;
+				font-size: 0.8rem;
+				color:#999;
+			}
+			.B4lunboDC4 li span{
+				height: 12px;
+				font-size: 1rem;
+			}
+			.B4lunboDC4 li div{
+				width: 120px;
+				height: 30px;
+				border: 1px solid orange;
+				font-size: 1rem;
+				line-height: 30px;
+				color:orange;
+				cursor: pointer;
+			}
+			.B4lunboDC4 li img{
+				width: 150px;
+				height: 130px;
+			}
+			.B4left4 {
+				width: 30px;
+				height: 60px;
+				color: white;
+				font-weight: bolder;
+				font-size: 30px;
+				text-align: center;
+				line-height: 55px;
+				background: rgb(233,233,233);
+				cursor: pointer;
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto 0;
+				display: none;
+
+			}
+			.B4right4 {
+				width: 30px;
+				height: 60px;
+				color: white;
+				font-weight: bolder;
+				font-size: 30px;
+				text-align: center;
+				line-height: 55px;
+				background: rgb(233,233,233);
+				cursor: pointer;
+				position: absolute;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto 0;
+				display: none;
+
+			}	
+			.B4right4:hover{
+				background-color: #999;
+			}
+			.B4left4:hover{
+				background-color: #999;
+			}
+		.B4lunbo4Btns {
+			/*width: 100%;*/
+			height: 20px;
+			position: absolute;
+			opacity: 0.9;
+			display: flex;
+			border-radius: 10px;
+			/*主轴方向*/
+			justify-content: flex-start;
+			/*侧轴方向*/
+			align-items: center;
+			margin: 0 auto;
+			left: 50%;
+			bottom: 30px;
+			transform:translateX(-50%);
+		}
+
+		.B4lunbo4Btns li {
+			border: 1px solid #ccc;
+			margin: 0 5px;
+			cursor: pointer;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background-color: green;
+		}
+		.B4lunbo4Btns li:hover{
+			background: white;
+			border: 1px green solid;
+			box-shadow: 0 0 3px 2px #ccc;
+		}
+		li.lunboActive4 {
+			background: white;
+			border: 1px green solid;
+			box-shadow: 0 0 3px 2px #ccc;
+		}

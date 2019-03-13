@@ -1,0 +1,151 @@
+*{
+	margin: 0;
+	padding: 0;
+	vertical-align: none;
+}
+body{
+	width: 100%;
+	/*height:100%;*/
+}
+.body{
+	width: 100%;
+	background:url(../imgs/0.png) repeat top left ;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	overflow: hidden;
+}
+.wrap{
+	width:1200px;
+	margin: 150px auto;
+	margin-bottom: 0px;
+	/*border: 1px solid skyblue;*/
+}
+.top,.center{
+	display: flex;
+	flex-wrap:wrap;
+	flex-direction:row;
+	justify-content:flex-start;
+}
+.center{
+	justify-content:space-between;
+}
+.t1{
+	width:9%;
+	height: 55px;
+}
+.t2{
+	width:18%;
+	height:36px;
+	padding-top: 20px;
+}
+
+header{
+	width:900px;
+	margin: 40px auto;
+	margin-bottom: 0px;
+	/*border: 1px solid skyblue;*/
+	overflow: hidden;
+}
+
+.cl div,.cr div{
+	display: flex;
+	flex-wrap:wrap;
+	flex-direction:row;
+	justify-content:space-between;
+}
+.cl,.cr{
+	width: 49.5%;
+	display: flex;
+	flex-wrap:wrap;
+	flex-direction:column;
+	justify-content:space-around;
+	align-content:space-around;
+}
+.cl2,.cr2{
+	margin: 5px 0;
+}
+.cl img,.cr img{
+	height:140px;
+}
+.cl1 img,.cl3 img,.cl2 img,.cr1 img+img,.cr2 img+img,.cr3 img+img{
+	width: 59%;
+}
+.cl1 img+img,.cl2 img+img,.cl3 img+img,.cr1 img,.cr2 img,.cr3 img{
+	width: 39%;
+}
+footer{
+	margin:50px 0;
+	width:100%;
+	text-align: center;
+}
+footer img{
+	width:480px;
+}
+
+		/*自适应*/
+@media screen and (max-width: 520px){
+	.wrap{
+		width:70%;
+		/*overflow: hidden;*/
+	}
+	.top{
+		flex-direction:column;
+	}
+	.t1{
+		width:40%;
+		min-width:150px; 
+	}
+	.t2{
+		width:70%;
+		min-width: 220px;
+		padding: 0;
+	}
+	header{
+		width:70%;
+		min-width: 350px;
+		height:70%;
+	}
+	.cl,.cr{
+		width:100%;
+		height:49%;
+		margin-bottom: 3px;
+	}
+	.cl>div,.cr>div{
+		height:32%;
+	}
+	
+	.center{
+		/*min-width: 350px;*/
+		flex-direction:column;
+		justify-content:space-between;
+		/*height:30%;*/
+	}
+	.a1{
+		height:100%;
+	}
+	.center img{
+		height: 100px;
+	}
+	footer img{
+		width: 70%;
+	}
+}
+
+		/*动画*/
+img{
+	-webkit-animation:bounceIn 0.5s ;
+}
+img:hover{
+	-webkit-animation:bounce 0.05s ;
+}
+
+footer img,.t2{
+	-webkit-animation:bounceIn 0s ;
+}
+footer img:hover{
+	-webkit-animation:bounce 0s ;
+}
+.t2:hover{
+	-webkit-animation:bounce 0s ;
+	-webkit-animation-direction: normal;
+}

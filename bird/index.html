@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>愤怒的小鸟</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			vertical-align: top;
+		}
+		body{
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			-o-user-select: none;
+			user-select: none;
+		}
+		#body{
+			width:900px;
+			height: 900px;
+			margin: 40px auto;
+			background-image: url(img/bg.jpg);
+			background-size: 100% 100%;
+			position: relative;
+			overflow: hidden;
+		}
+		#center{
+			position: relative;
+			width:900px;
+			height: 793px;
+			border: 1px solid red;
+		}
+		#bird{
+			position: absolute;
+			top: 50%;
+			left: 120px;
+			width:50px;
+			height: 35px;
+		}
+		#bird img{
+			width: 100%;
+			height: 100%;
+		}
+		#timer{
+			width:40px;
+			height: 60px;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform:translateX(-50%);
+			z-index: 5;
+			display:none;
+		}
+		#timer img{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
+		#body .imgGress{
+			position: absolute;
+			width:1500px;
+			height:25px;
+			top: 793px;
+			left: 0px;
+		}
+		#center .boxTop img{
+			width:100%;
+		}
+		#center .boxBottom img{
+			width:100%;
+		}
+		.boxBottom{
+			position: absolute;
+			bottom: 0;
+			left:900px;
+			width:140px;
+		}
+		.boxTop{
+			position: absolute;
+			top:0;
+			left:900px;
+			width:140px;
+		}
+		#gameover{
+			width: 380px;
+			height: 90px;
+			position: absolute;
+			top: 30%;
+			left: 50%;
+			transform:translate(-50% ,-50%);
+			background-image: url(img/game_over.jpg);
+			z-index: 15;
+			background-size: 100% 100%;
+			display:none;
+
+		}
+		#gameok{
+			width: 80px;
+			height: 40px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform:translate(-50% ,-50%);
+			background-image: url(img/ok.jpg);
+			background-size: 100% 100%;
+			cursor: pointer;
+			z-index: 15;
+			display:none;
+
+		}
+		#gamestart{
+			width: 80px;
+			height: 40px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform:translate(-50% ,-50%);
+			background-image: url(img/start.jpg);
+			background-size: 100% 100%;
+			cursor: pointer;
+			z-index: 16;
+
+		}
+		#head{
+			width: 320px;
+			height: 80px;
+			position: absolute;
+			top: 0%;
+			left: 0%;
+			background-image: url(img/head.jpg);
+			background-size: 100% 100%;
+			z-index: 15;
+
+		}
+		#message{
+			width: 280px;
+			height: 100px;
+			position: absolute;
+			bottom: 3%;
+			left: 5%;
+			background-image: url(img/message.jpg);
+			background-size: 100% 100%;
+			z-index: 15;
+		}
+	</style>
+</head>
+<body>
+	<div id="body">
+		<div id="head"></div>
+		<div id="gamestart"></div>
+		<div id="center">
+			<div id="bird"><img></div>	
+			<div id="timer"><img></div>
+		</div>
+		<div id="gameover"></div>
+		<div id="gameok"></div>
+		<div id="message"></div>
+	</div>
+</body>
+<script>
+	// 获取图片
+		// 计数板
+	var imgTimer=['img/0.jpg','img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg','img/5.jpg','img/6.jpg','img/7.jpg','img/8.jpg','img/9.jpg']
+		// 鸟飞翔状态
+	var imgBird=['img/bird.png','img/down_bird.png','img/up_bird.png']
+		//上边的下水道
+	var imgboxTop=['img/box_pipe1.png','img/box_mod1.png'];
+		//下边的下水道
+	var imgboxBottom=['img/box_pipe2.png','img/box_mod2.png'];
+		//草地
+	var imgGress=['img/grass.jpg'];
+
+	var birdImg=document.querySelector('#bird img')
+	var timerImg=document.querySelector('#timer img')
+	birdImg.src=imgBird[0];
+	timerImg.src=imgTimer[0];
+
+//--------------------------------------------------------------------
+	//-----------创建鸟----------------
+	//获取小鸟飞翔状态
+	var t=false;
+	var speed=1;
+	var birdMove;
+	var creatgress;
+	var gressMove;
+	function birdfly(){
+		birdMove=setInterval(function(){
+			if(t){
+				birdImg.src=imgBird[2];
+				bird.style.top= bird.offsetTop<=speed?0:bird.offsetTop-speed+'px'
+			}else{
+				birdImg.src=imgBird[1];
+				bird.style.top= bird.offsetTop+speed+'px';
+			}
+			if(bird.offsetTop>=center.clientHeight-speed-bird.clientHeight){
+				birdImg.src=imgBird[0];
+				clearInterval(birdMove);
+			}
+
+		},1)
+		body.onmousedown=function(){
+			t=true;
+		}
+		body.onmouseup=function(){
+			t=false;
+		}
+	}
+//--------------------------------------------------------------------
+	//-----------创建草地----------------
+	//移动草地
+	var mov=2;
+		//创建草地
+	function creatImgGress(){
+		var gressImg=document.createElement('img')
+		gressImg.src=imgGress[0]
+		body.appendChild(gressImg)
+		gressImg.className='imgGress'
+		gressMove=setInterval(function(){
+			gressImg.style.left=gressImg.offsetLeft-mov+'px'
+			if (gressImg.offsetLeft<=-gressImg.offsetWidth){
+				gressImg.remove()
+			};
+
+		},10)
+	}
+	
+
+//--------------------------------------------------------------------
+
+	//随机两个数,并且使他的和为11
+	var a=[1,2,3,4,5,6,7,8,9,10];
+	var b=[10,9,8,7,6,5,4,3,2,1];
+	function randomNumber(min,max){
+			if (max<min) {
+				var temp =max;
+				max = min;
+				min = temp;
+			}
+			return	Math.floor(Math.random()*(max-min+1)+min );
+		}
+
+	//-----------创建墙----------------
+		//需要的所有定时器
+	var boxTimer;
+	var boxMove;
+	var scoringTimer;
+	var coun=0;
+		//添加墙
+	function box(){
+		// 上边墙
+		var boxTopImg1=document.createElement('img');
+		var boxTopImg2=document.createElement('img');
+		var boxTopdiv=document.createElement('div');
+		boxTopImg1.src=imgboxTop[0];
+		boxTopImg1.style.height='40px';
+		boxTopImg2.src=imgboxTop[1];
+		boxTopdiv.className='boxTop'
+		boxTopdiv.appendChild(boxTopImg2);
+		boxTopdiv.appendChild(boxTopImg1);
+		center.appendChild(boxTopdiv)
+		// 下边墙
+		var boxBottomImg1=document.createElement('img');
+		var boxBottomImg2=document.createElement('img');
+		var boxBottomdiv=document.createElement('div');
+		boxBottomImg1.src=imgboxBottom[0];
+		boxBottomImg1.style.height='40px';
+		boxBottomImg2.src=imgboxBottom[1];
+		boxBottomdiv.className='boxBottom'
+		boxBottomdiv.appendChild(boxBottomImg1);
+		boxBottomdiv.appendChild(boxBottomImg2);
+		center.appendChild(boxBottomdiv);
+
+		// 设置添加图的大小
+		var i=randomNumber(0,9)
+		boxTopImg2.style.height=40*b[i]+'px';
+		boxBottomImg2.style.height=40*a[i]+'px';
+
+		boxMover(boxTopdiv,boxBottomdiv,boxTimer,center,bird);
+		scoring(boxTopdiv);
+	}
+	
+
+	// 墙自身移动(碰撞)
+	function boxMover(boxTopdiv,boxBottomdiv,boxTimer,center,bird){
+		boxMove=setInterval(function(){
+			if(crash1(bird,boxTopdiv)||crash2(bird,boxBottomdiv)){
+				clearInterval(birdMove)
+				clearInterval(boxTimer)
+				clearInterval(boxMove)
+				clearTimeout(scoringTimer)
+				speed=0;
+				mov=0;
+				fullBird()
+				gameover.style.display='block'
+				gameok.style.display='block'
+			}
+			boxTopdiv.style.left=boxTopdiv.offsetLeft-mov+'px';
+			boxBottomdiv.style.left=boxBottomdiv.offsetLeft-mov+'px';
+			
+			if (boxTopdiv.offsetLeft==-boxTopdiv.offsetWidth) {
+				boxTopdiv.remove();
+				boxBottomdiv.remove();
+			}
+		},10)
+	}
+
+	//检测碰撞
+	function crash1(bird,div1){
+		// 小鸟偏距
+		var tBird=bird.offsetTop;
+		var lBird=bird.offsetLeft;
+		var bBird=bird.offsetTop;
+		var rBird=bird.offsetLeft;
+		// 上box的偏距
+		var bboxTop=div1.offsetHeight;
+		var lboxTop=div1.offsetLeft-bird.offsetWidth;
+		var rboxTop=div1.offsetLeft+div1.offsetWidth;
+
+		if(bBird<=bboxTop&&lBird>=lboxTop&&rBird<=rboxTop){
+			return true;
+		}else{return false}
+	}
+	//检测碰撞
+	function crash2(bird,div2){
+		// 小鸟偏距
+		var tBird=bird.offsetTop;
+		var lBird=bird.offsetLeft;
+		var bBird=bird.offsetTop;
+		var rBird=bird.offsetLeft;
+		// 下box的偏距
+		var tboxBottom=center.offsetHeight-div2.offsetHeight-bird.offsetHeight;
+		var lboxBottom= div2.offsetLeft-bird.offsetWidth;
+		var rboxBottom=div2.offsetLeft+div2.offsetWidth;
+
+		if(bBird>=tboxBottom&&lBird>=lboxBottom&&rBird<=rboxBottom){
+			return true;
+		}else{return false}
+	}
+
+	//--------------碰撞事件--------------------
+	//坠落
+	function fullBird(){
+		bird.style.transition="all 2s"
+		bird.style.top=center.clientHeight-bird.clientHeight+'px';
+	}
+
+	//--------------计分板--------------------
+	//计分板
+	function scoring(div1){
+		scoringTimer=setTimeout(function(){
+			var lboxBottom = div1.offsetLeft;
+			if(lboxBottom==0){
+				coun += 1;
+				timerImg.src=imgTimer[coun];
+				if(coun>9)timerImg.src=imgTimer[9];
+			}
+		},4500)
+	}
+	
+//----------------------------------------------------------------
+	//游戏开始
+		"head","gamestart","gameover","gameok","message","timer"
+	
+	//点击ok;
+	gameok.onclick=function(){
+		head.style.display='block';
+		gamestart.style.display='block';
+		message.style.display='block';
+		timer.style.display='none';
+		gameover.style.display='none';
+		gameok.style.display='none';
+		location.reload()
+	}
+	// 点击start;
+	gamestart.onclick=function(){
+		head.style.display='none'
+		gamestart.style.display='none'
+		message.style.display='none'
+		timer.style.display='block'
+		gameover.style.display='none'
+		gameok.style.display='none'
+		// 开始创建草地
+		creatImgGress();
+		// 移动草地
+		creatgress=setInterval(creatImgGress,2200)
+		//鸟飞翔
+		birdfly()
+		boxTimer=setInterval(box,2200)
+	}
+
+
+</script>
+</html>
