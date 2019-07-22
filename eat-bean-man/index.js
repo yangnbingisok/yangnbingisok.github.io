@@ -37,7 +37,11 @@
 		'1,3':1,
 		'26,3':1,
 		'1,23':1,
-		'26,23':1
+		'26,23':1,
+		'2,23':1,
+		'6,23':1,
+		'26,3':1,
+		'26,2':1
 	},
 	_COS = [1,0,-1,0],
 	_SIN = [0,1,0,-1],
@@ -92,7 +96,7 @@
 				context.textAlign = 'right';
 				context.textBaseline = 'bottom';
 				context.fillStyle = '#AAA';
-				context.fillText('© passer-by.com',this.x,this.y);
+				context.fillText('© yangnbingisok.github.io',this.x,this.y);
 			}
 		});
 		//事件绑定
@@ -290,7 +294,7 @@
 			}
 		});
 		//NPC
-		for(var i=0;i<4;i++){
+		for(var i=0;i<2;i++){
 			stage.createItem({
 				width:30,
 				height:30,
