@@ -502,16 +502,16 @@
 				case 32: //空格
 				this.status = this.status==2?1:2;
 				break;
-				case 39: //右
+				case 76: //右
 				player.control = {orientation:0};
 				break;
-				case 40: //下
+				case 75: //下
 				player.control = {orientation:1};
 				break;
-				case 37: //左
+				case 74: //左
 				player.control = {orientation:2};
 				break;
-				case 38: //上
+				case 73: //上
 				player.control = {orientation:3};
 				break;
 			}
